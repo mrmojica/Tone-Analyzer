@@ -1,0 +1,13 @@
+/** {
+	outline:red 1px solid;
+}*/
+
+body {
+	margin: 0 auto;
+	width: 500px;
+	text-align: center;
+}
+
+.result-section {
+	display: none;
+}
