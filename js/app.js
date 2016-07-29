@@ -72,9 +72,9 @@
                         [//colorSet Array
 
                         "#B71605",
-                        "#49412A",
-                        "#9A64C4",
                         "#B9EE84",
+                        "#9A64C4",
+                        "#F8E259",
                         "#83D4FD"
                         ]);
                     CanvasJS.addColorSet("socialShades",
@@ -105,7 +105,7 @@
                                     type: "bar", //change it to line, area, bar, pie, etc
                                     indexLabelFontFamiy: "Garamond",
                                     dataPoints: [
-                                        { y: Math.floor((results.emotionResult.anger * 100)), label: "Anger", toolTipContent:"A sense of tension or hostility." },
+                                        { y: Math.floor((results.emotionResult.anger * 100)), label: "Anger", toolTipContent:"A sense of tension or hostility."},
                                         { y: Math.floor((results.emotionResult.disgust * 100)), label: "Disgust", toolTipContent:"Revulsion to something offensive or unpleasant." },
                                         { y: Math.floor((results.emotionResult.fear * 100)), label: "Fear", toolTipContent:"A feeling of mild or extreme caution." },
                                         { y: Math.floor((results.emotionResult.joy * 100)), label: "Joy", toolTipContent:"A sense of well-being, safety, contentment." },
@@ -148,6 +148,23 @@
 
                     $("#chartContainer").CanvasJSChart(options);
 
+                    $('.image').hide();
+                    if((results.emotionResult.anger * 100) >= 50 ) {
+                        $('#anger').show();
+                    }
+                    if((results.emotionResult.disgust * 100) >= 50 ) {
+                        $('#disgust').show();
+                    }
+                    if((results.emotionResult.fear * 100) >= 50 ) {
+                        $('#fear').show();
+                    }
+                    if((results.emotionResult.joy * 100) >= 50 ) {
+                        $('#joy').show();
+                    }
+                    if((results.emotionResult.sadness * 100) >= 50 ) {
+                        $('#sadness').show();
+                    }
+
                 },
                 error: function(error) {
                     console.log(error);
@@ -157,10 +174,17 @@
 
 
         };
+
+        $('.instructions').hide();
+
         $('#submit-button').click(function(e) {
             console.log();
             e.preventDefault();
             getAnalysis();
+            $('.instructions').show();
+
+
+
 
 
         });

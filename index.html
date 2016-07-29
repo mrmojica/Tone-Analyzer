@@ -19,14 +19,17 @@
     </div>
     <form>
         <div class="form-group container text-center">
-            <textarea class="form-control" id="exampleTextarea" rows="10" cols="50" placeholder="Please enter your text content here..."></textarea>
+            <textarea class="form-control" id="exampleTextarea" rows="10" cols="50" placeholder="Please enter your text content here...
+
+Your text content will be analyzed by an automated reader and you will receive feedback on how your text messages might be perceived by the end user.
+
+            "></textarea>
             <br>
             <button id="submit-button" type="submit" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#information">Submit</button>
         </div>
     </form>
 
 <hr>
-
 
 
 
@@ -37,6 +40,39 @@
       <div class="col-sm-6" id="doughnutContainer" style="height: 300px;">
     </div>
 </div>
+</div>
+
+<hr>
+
+<div class="container instructions">
+    <div>
+        <h4>Understanding your scores</h4>
+
+<p>Low Value: < 50 : That tone is less likely to be perceived.<br />
+High Value: > 75 : This tone is highly likely to be perceived.</p>
+    </div>
+
+   <div>
+<h4>How it works</h4>
+
+<p>This web application is power by the IBM Watson Tone Analyzer service. It is based on findings in the field of psycholinguistics, which explores the relationship between linguistic behaviors and psychological theories. Your text input is fed into this automated service which computes the scores listed above. Research has shown a strong correlation between word choices and personality, emotions, attitudes, and thought processes. For more information on the science behind this service, please visit:
+<br />
+<br />
+
+<a id="insideOut" href="http://www.ibm.com/watson/developercloud/doc/tone-analyzer/science.shtml">IBM Watson Tone Analyzer API</a>
+</p>
+
+<div class="images">
+<img id="anger" class="image" src="img/anger.png" style="height:50px">
+<img id="disgust" class="image" src="img/disgust.png" style="height:50px">
+<img id="fear" class="image" src="img/fear.png" style="height:50px">
+<img id="joy" class="image" src="img/joy.png" style="height:50px">
+<img id="sadness" class="image" src="img/sadness.png" style="height:50px">
+</div>
+
+   </div>
+
+
 </div>
 
 
