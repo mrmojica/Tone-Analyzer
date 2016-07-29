@@ -1,4 +1,7 @@
 (function() {
+
+
+
     $(document).ready(function() {
 
 
@@ -24,34 +27,42 @@
                 success: function(response) {
                      
                      //Emotion
-                     var anger = response.document_tone.tone_categories[0].tones[0].score;
-                     var disgust = response.document_tone.tone_categories[0].tones[1].score;
-                     var fear = response.document_tone.tone_categories[0].tones[2].score;
-                     var joy = response.document_tone.tone_categories[0].tones[3].score;
-                     var sadness = response.document_tone.tone_categories[0].tones[4].score;
+
+                     var results ={
+
+                     emotionResult: {
+                        anger: response.document_tone.tone_categories[0].tones[0].score,
+                        disgust: response.document_tone.tone_categories[0].tones[1].score,
+                        fear: response.document_tone.tone_categories[0].tones[2].score,
+                        joy: response.document_tone.tone_categories[0].tones[3].score,
+                        sadness: response.document_tone.tone_categories[0].tones[4].score
+                    },
                      
                      //Social Tendencies
-                     var openness = response.document_tone.tone_categories[2].tones[0].score;
-                     var conscientiousness = response.document_tone.tone_categories[2].tones[1].score;
-                     var extraversion = response.document_tone.tone_categories[2].tones[2].score;
-                     var agreeableness = response.document_tone.tone_categories[2].tones[3].score;
-                     var emotionRange = response.document_tone.tone_categories[2].tones[4].score;
+                    socialResult: {
+                        openness: response.document_tone.tone_categories[2].tones[0].score,
+                        conscientiousness: response.document_tone.tone_categories[2].tones[1].score,
+                        extraversion: response.document_tone.tone_categories[2].tones[2].score,
+                        agreeableness: response.document_tone.tone_categories[2].tones[3].score,
+                        emotionRange: response.document_tone.tone_categories[2].tones[4].score
+                    }
+                };
 
-   console.log(response);
+   console.log(results.emotionResult.anger);
 
 //console.log(response);
                 var emotionResult = '';
                 var socialResult = '';
-                emotionResult += '<li class="emotion">' + 'Anger: ' + Math.floor((anger * 100)) + '</li>';
-                emotionResult += '<li class="emotion">' + 'Disgust: ' + Math.floor((disgust * 100)) + '</li>';
-                emotionResult += '<li class="emotion">' + 'Fear: ' + Math.floor((fear * 100)) + '</li>';
-                emotionResult += '<li class="emotion">' + 'Joy: ' + Math.floor((joy * 100)) + '</li>';
-                emotionResult += '<li class="emotion">' + 'Sadness: ' + Math.floor((sadness * 100)) + '</li>';
-                socialResult += '<li class="social">' + 'Openness: ' + Math.floor((openness * 100)) + '</li>';
-                socialResult += '<li class="social">' + 'Conscientiousness: ' + Math.floor((conscientiousness * 100)) + '</li>';
-                socialResult += '<li class="social">' + 'Extraversion: ' + Math.floor((extraversion * 100)) + '</li>';
-                socialResult += '<li class="social">' + 'Agreeableness: ' + Math.floor((agreeableness * 100)) + '</li>';
-                socialResult += '<li class="social">' + 'Emotional Range: ' + Math.floor((emotionRange * 100)) + '</li>';
+                emotionResult += '<li class="emotion">' + 'Anger: ' + Math.floor((results.emotionResult.anger * 100)) + '</li>';
+                // emotionResult += '<li class="emotion">' + 'Disgust: ' + Math.floor((disgust * 100)) + '</li>';
+                // emotionResult += '<li class="emotion">' + 'Fear: ' + Math.floor((fear * 100)) + '</li>';
+                // emotionResult += '<li class="emotion">' + 'Joy: ' + Math.floor((joy * 100)) + '</li>';
+                // emotionResult += '<li class="emotion">' + 'Sadness: ' + Math.floor((sadness * 100)) + '</li>';
+                // socialResult += '<li class="social">' + 'Openness: ' + Math.floor((openness * 100)) + '</li>';
+                // socialResult += '<li class="social">' + 'Conscientiousness: ' + Math.floor((conscientiousness * 100)) + '</li>';
+                // socialResult += '<li class="social">' + 'Extraversion: ' + Math.floor((extraversion * 100)) + '</li>';
+                // socialResult += '<li class="social">' + 'Agreeableness: ' + Math.floor((agreeableness * 100)) + '</li>';
+                // socialResult += '<li class="social">' + 'Emotional Range: ' + Math.floor((emotionRange * 100)) + '</li>';
              
 
                 $('.emotion-percent').html(emotionResult);
