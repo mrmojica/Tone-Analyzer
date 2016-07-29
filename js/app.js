@@ -114,6 +114,7 @@
                                 }
                             ]
                         };
+                    
                             /// Doughnut Chart
                         var chart = new CanvasJS.Chart("doughnutContainer", {
                             colorSet: "socialShades",
