@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Tone Analyzer</title>
     <!-- bootstrap css -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-<div class="container text-center">
-<h1 class="text-primary">Tone Analyzer</h1>
-<h4 class="text-primary">Change people's perceptions.</h4>
-</div>
+    <div class="container text-center">
+        <h1 class="text-primary">Tone Analyzer</h1>
+        <h4 class="text-primary">Change people's perceptions.</h4>
+    </div>
+    <form>
+        <div class="form-group container text-center">
+            <textarea class="form-control" id="exampleTextarea" rows="10" cols="50" placeholder="Please enter your text content here...">
+            </textarea>
+            <br>
+            <button id="submit-button" type="submit" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#information">Submit</button>
+        </div>
+    </form>
+    <section class="result-section">
+        <div class="text-result">
+            <ul class="emotion-percent"></ul>
+            <ul class="social-percent"></ul>
+        </div>
+        <div id="chartContainer" style="height: 300px; width: 70%;">
 
-<form>
- <div class="form-group container text-center">
-<textarea class="form-control" id="exampleTextarea" rows="10" cols="50" placeholder="Please enter your text content here...">
-</textarea>
-  <br>
-  <button id="submit-button" type="submit" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#information">Submit</button>
-</div>
-</form>
-
- 
-<section class="result-section">
-  <div class="text-result">
-  <ul class="emotion-percent"></ul>
-  <ul class="social-percent"></ul>
-  </div>
-
-</section>
-
-
-
-
-
-<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script  type="text/javascript" src="js/app.js"></script>
+        </div>
+        <div id="doughnutContainer" style="height: 300px; width: 70%">
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="js/jquery.canvasjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/app.js"></script>
 </body>
+
 </html>
