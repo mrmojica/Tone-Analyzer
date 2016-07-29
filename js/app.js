@@ -102,7 +102,7 @@
 
 
                                 {
-                                    type: "column", //change it to line, area, bar, pie, etc
+                                    type: "bar", //change it to line, area, bar, pie, etc
                                     indexLabelFontFamiy: "Garamond",
                                     dataPoints: [
                                         { y: Math.floor((results.emotionResult.anger * 100)), label: "Anger", toolTipContent:"A sense of tension or hostility." },
@@ -161,6 +161,7 @@
             console.log();
             e.preventDefault();
             getAnalysis();
+
 
         });
     });
