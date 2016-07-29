@@ -54,15 +54,15 @@
                 var emotionResult = '';
                 var socialResult = '';
                 emotionResult += '<li class="emotion">' + 'Anger: ' + Math.floor((results.emotionResult.anger * 100)) + '</li>';
-                // emotionResult += '<li class="emotion">' + 'Disgust: ' + Math.floor((disgust * 100)) + '</li>';
-                // emotionResult += '<li class="emotion">' + 'Fear: ' + Math.floor((fear * 100)) + '</li>';
-                // emotionResult += '<li class="emotion">' + 'Joy: ' + Math.floor((joy * 100)) + '</li>';
-                // emotionResult += '<li class="emotion">' + 'Sadness: ' + Math.floor((sadness * 100)) + '</li>';
-                // socialResult += '<li class="social">' + 'Openness: ' + Math.floor((openness * 100)) + '</li>';
-                // socialResult += '<li class="social">' + 'Conscientiousness: ' + Math.floor((conscientiousness * 100)) + '</li>';
-                // socialResult += '<li class="social">' + 'Extraversion: ' + Math.floor((extraversion * 100)) + '</li>';
-                // socialResult += '<li class="social">' + 'Agreeableness: ' + Math.floor((agreeableness * 100)) + '</li>';
-                // socialResult += '<li class="social">' + 'Emotional Range: ' + Math.floor((emotionRange * 100)) + '</li>';
+                emotionResult += '<li class="emotion">' + 'Disgust: ' + Math.floor((results.emotionResult.disgust * 100)) + '</li>';
+                emotionResult += '<li class="emotion">' + 'Fear: ' + Math.floor((results.emotionResult.fear * 100)) + '</li>';
+                emotionResult += '<li class="emotion">' + 'Joy: ' + Math.floor((results.emotionResult.joy * 100)) + '</li>';
+                emotionResult += '<li class="emotion">' + 'Sadness: ' + Math.floor((results.emotionResult.sadness * 100)) + '</li>';
+                socialResult += '<li class="social">' + 'Openness: ' + Math.floor((results.socialResult.openness * 100)) + '</li>';
+                socialResult += '<li class="social">' + 'Conscientiousness: ' + Math.floor((results.socialResult.conscientiousness * 100)) + '</li>';
+                socialResult += '<li class="social">' + 'Extraversion: ' + Math.floor((results.socialResult.extraversion * 100)) + '</li>';
+                socialResult += '<li class="social">' + 'Agreeableness: ' + Math.floor((results.socialResult.agreeableness * 100)) + '</li>';
+                socialResult += '<li class="social">' + 'Emotional Range: ' + Math.floor((results.socialResult.emotionRange * 100)) + '</li>';
              
 
                 $('.emotion-percent').html(emotionResult);
