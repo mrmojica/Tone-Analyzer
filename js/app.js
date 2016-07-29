@@ -68,24 +68,22 @@
                     // $('.emotion-percent').html(emotionResult);
                     // $('.social-percent').html(socialResult);
 
-                    CanvasJS.addColorSet("emotionShades",
-                        [//colorSet Array
+                    CanvasJS.addColorSet("emotionShades", [ //colorSet Array
 
                         "#B71605",
                         "#B9EE84",
                         "#9A64C4",
                         "#F8E259",
                         "#83D4FD"
-                        ]);
-                    CanvasJS.addColorSet("socialShades",
-                        [//colorSet Array
+                    ]);
+                    CanvasJS.addColorSet("socialShades", [ //colorSet Array
 
                         "#F8BB00",
                         "#D3DEE1",
                         "#FF0448",
                         "#EAFE0C",
                         "#BA6CFF"
-                        ]);
+                    ]);
 
                     var options = {
                         colorSet: "emotionShades",
@@ -101,67 +99,67 @@
                         data: [
 
 
-                                {
-                                    type: "bar", //change it to line, area, bar, pie, etc
-                                    indexLabelFontFamiy: "Garamond",
-                                    dataPoints: [
-                                        { y: Math.floor((results.emotionResult.anger * 100)), label: "Anger", toolTipContent:"A sense of tension or hostility."},
-                                        { y: Math.floor((results.emotionResult.disgust * 100)), label: "Disgust", toolTipContent:"Revulsion to something offensive or unpleasant." },
-                                        { y: Math.floor((results.emotionResult.fear * 100)), label: "Fear", toolTipContent:"A feeling of mild or extreme caution." },
-                                        { y: Math.floor((results.emotionResult.joy * 100)), label: "Joy", toolTipContent:"A sense of well-being, safety, contentment." },
-                                        { y: Math.floor((results.emotionResult.sadness * 100)), label: "Sadness", toolTipContent:"A sense of loss: less energetic and withdrawn." }
-                                    ]
-                                }
-                            ]
-                        };
-
-                            /// Doughnut Chart
-                        var chart = new CanvasJS.Chart("doughnutContainer", {
-                            colorSet: "socialShades",
-                            title: {
-                                fontFamily: "Garamond",
-                                fontWeight: "Bold",
-                                text: "Social Perception Scores"
-                            },
-                            animationEnabled: true,
-                            theme: "theme2",
-                            data: [{
-                                type: "doughnut",
-                                indexLabelFontFamily: "Garamond",
-                                startAngle: 0,
-                                indexLabelFontColor: "dimgrey",
-                                indexLabelLineColor: "darkgrey",
-
+                            {
+                                type: "bar", //change it to line, area, bar, pie, etc
+                                indexLabelFontFamiy: "Garamond",
                                 dataPoints: [
-                                    { y: (results.socialResult.openness * 100), indexLabel: "Openness {y}", label: "Extent a persion is open to variety"},
-                                    { y: (results.socialResult.conscientiousness * 100), indexLabel: "Conscientiousness {y}", label: "A tendency to act in a thoughtful way" },
-                                    { y: (results.socialResult.extraversion * 100), indexLabel: "Extraversion {y}", label: "Engaging, assertive, outgoing." },
-                                    { y: (results.socialResult.agreeableness * 100), indexLabel: "Agreeableness {y}", label: "A measure of compassion and sympathy." },
-                                    { y: (results.socialResult.emotionRange * 100), indexLabel: "Emotional Range {y}", label: "A measure of sensitivity to the environment." }
-
+                                    { y: Math.floor((results.emotionResult.anger * 100)), label: "Anger", toolTipContent: "A sense of tension or hostility." },
+                                    { y: Math.floor((results.emotionResult.disgust * 100)), label: "Disgust", toolTipContent: "Revulsion to something offensive or unpleasant." },
+                                    { y: Math.floor((results.emotionResult.fear * 100)), label: "Fear", toolTipContent: "A feeling of mild or extreme caution." },
+                                    { y: Math.floor((results.emotionResult.joy * 100)), label: "Joy", toolTipContent: "A sense of well-being, safety, contentment." },
+                                    { y: Math.floor((results.emotionResult.sadness * 100)), label: "Sadness", toolTipContent: "A sense of loss: less energetic and withdrawn." }
                                 ]
-                            }]
-                        });
+                            }
+                        ]
+                    };
 
-                        chart.render();
+                    /// Doughnut Chart
+                    var chart = new CanvasJS.Chart("doughnutContainer", {
+                        colorSet: "socialShades",
+                        title: {
+                            fontFamily: "Garamond",
+                            fontWeight: "Bold",
+                            text: "Social Perception Scores"
+                        },
+                        animationEnabled: true,
+                        theme: "theme2",
+                        data: [{
+                            type: "doughnut",
+                            indexLabelFontFamily: "Garamond",
+                            startAngle: 0,
+                            indexLabelFontColor: "dimgrey",
+                            indexLabelLineColor: "darkgrey",
+
+                            dataPoints: [
+                                { y: (results.socialResult.openness * 100), indexLabel: "Openness {y}", label: "Extent a persion is open to variety" },
+                                { y: (results.socialResult.conscientiousness * 100), indexLabel: "Conscientiousness {y}", label: "A tendency to act in a thoughtful way" },
+                                { y: (results.socialResult.extraversion * 100), indexLabel: "Extraversion {y}", label: "Engaging, assertive, outgoing." },
+                                { y: (results.socialResult.agreeableness * 100), indexLabel: "Agreeableness {y}", label: "A measure of compassion and sympathy." },
+                                { y: (results.socialResult.emotionRange * 100), indexLabel: "Emotional Range {y}", label: "A measure of sensitivity to the environment." }
+
+                            ]
+                        }]
+                    });
+
+                    chart.render();
 
 
                     $("#chartContainer").CanvasJSChart(options);
 
                     $('.image').hide();
-                    if((results.emotionResult.anger * 100) >= 50 ) {
+                    if ((results.emotionResult.anger * 100) >= 50) {
                         $('#anger').show();
                     }
-                    if((results.emotionResult.disgust * 100) >= 50 ) {
+                    if ((results.emotionResult.disgust * 100) >= 50) {
                         $('#disgust').show();
                     }
-                    if((results.emotionResult.fear * 100) >= 50 ) {
+                    if ((results.emotionResult.fear * 100) >= 50) {
                         $('#fear').show();
                     }
-                    if((results.emotionResult.joy * 100) >= 50 ) {
+                    if ((results.emotionResult.joy * 100) >= 50) {
                         $('#joy').show();
                     }
-                    if((results.emotionResult.sadness * 100) >= 50 ) {
+                    if ((results.emotionResult.sadness * 100) >= 50) {
                         $('#sadness').show();
                     }
 
