@@ -11,15 +11,15 @@
 
             var userInput = $('textarea').val();
             var request = {
-                username: "1207dc30-685e-4d17-8158-1614ccce582c",
-                password: "gYdMh31GBHrS",
+                username: "edbfb344-421b-4a09-96e1-80893eee6949",
+                password: "chbuNrzQAOU7",
                 version: "2016-05-19",
                 text: userInput
 
             };
 
-            var username = "1207dc30-685e-4d17-8158-1614ccce582c";
-            var password = "gYdMh31GBHrS";
+            var username = "edbfb344-421b-4a09-96e1-80893eee6949";
+            var password = "chbuNrzQAOU7";
 
             $.ajax({
                 url: "https://crossorigin.me/https://" + username + ":" + password + "@gateway.watsonplatform.net/tone-analyzer/api/v3/tone",
